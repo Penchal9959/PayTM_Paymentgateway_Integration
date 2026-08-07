@@ -32,4 +32,4 @@ desktop.ini
 .vscode/
 .idea/
 *~
-*.swp
+*.swp*.sqlite3
