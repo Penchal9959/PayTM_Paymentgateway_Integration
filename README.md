@@ -4,9 +4,8 @@ Server-side [Paytm](https://paytm.com) payment gateway integration for Django:
 builds the order checksum, posts to Paytm's staging gateway, and verifies the
 checksum on the callback.
 
-> **Archived.** Early Django work from 2020-2021, kept as a record. Not
-> maintained. Current work is GNSS signal processing and FPGA design - see the
-> [profile](https://github.com/Penchal9959).
+Early Django work, from 2020-2021. Current work is GNSS signal processing
+and FPGA design - see the [profile](https://github.com/Penchal9959).
 
 ## What this was
 
