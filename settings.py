@@ -21,16 +21,19 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY is read from the environment. It was previously hardcoded here and
+# SECRET_KEY is read from the environment, with no fallback. It was hardcoded
+# here once and has been purged from this repository's history. There is
+# deliberately no default: an application that starts on a publicly known key
+# is worse than one that refuses to start. It was previously committed and
 # committed to a public repository; treat that old value as compromised.
 #   export DJANGO_SECRET_KEY="$(python -c 'from django.core.management.utils import get_random_secret_key as k; print(k())')"
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'insecure-dev-key-do-not-use-in-production')
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # DEBUG must be off in production.
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() == 'true'
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 
 # Application definition
